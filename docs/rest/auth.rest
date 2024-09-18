@@ -1,0 +1,22 @@
+POST http://127.0.0.1:3000/auth/register
+Content-Type: application/json
+
+{
+    "name":"prueba3",
+    "email": "raul.paez@outlook.com",
+    "password": "Pass_123"
+}
+
+### login sin conexion a BDD
+POST http://127.0.0.1:3000/auth/login
+Content-Type: application/json
+
+{
+    "name":"pruebaRP",
+    "email": "raul.paez@outlook.com",
+    "password": "Pass_123"
+}
+
+### users
+GET http://127.0.0.1:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhdWwucGFlekBvdXRsb29rLmNvbSIsImlkIjoxLCJpYXQiOjE3MjY2OTg0NjEsImV4cCI6MTcyNjcwOTI2MX0.IJ_5FpRfqvU0LNo13jREx3ll9qVdEa_iNCke60Jl-8w
