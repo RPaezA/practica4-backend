@@ -8,7 +8,11 @@ async function bootstrap() {
 
   app.enableCors();
   //class validator
-  app.useGlobalPipes(new ValidationPipe())
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true, // Elimina propiedades desconocidas
+    forbidNonWhitelisted: true, // Lanza error si hay propiedades desconocidas
+    transform: true, // Transforma los datos a los tipos esperados
+  }),)
 
   // swagger
   const config = new DocumentBuilder()
