@@ -12,7 +12,8 @@ async function bootstrap() {
     whitelist: true, // Elimina propiedades desconocidas
     forbidNonWhitelisted: true, // Lanza error si hay propiedades desconocidas
     transform: true, // Transforma los datos a los tipos esperados
-  }),)
+  })
+  )
 
   // swagger
   const config = new DocumentBuilder()
