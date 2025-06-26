@@ -6,11 +6,13 @@ import { JwtStrategy } from './jwt.strategy';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from '../users/entities/user.entity';
 
+import { MailModule } from '../mail/mail.module';
+
 @Module({
     imports:[JwtModule.register({
         secret:"CODIGO_SECRETO",
         signOptions:{expiresIn: '12h'}
-    }), TypeOrmModule.forFeature([User])],
+    }), TypeOrmModule.forFeature([User]),MailModule],
     controllers:[AuthController],
     providers:[AuthService, JwtStrategy],
     

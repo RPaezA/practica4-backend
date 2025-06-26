@@ -12,4 +12,6 @@ export class LoginAuthDto implements User{
 
     @IsOptional() // Campo opcional
   rememberMe?: boolean;
+  @IsOptional() // Campo opcional
+  name?: string;
 }

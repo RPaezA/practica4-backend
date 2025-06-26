@@ -1,4 +1,12 @@
+import { IsString, IsNotEmpty, Length } from 'class-validator';
+
 export class CreateCategoriaDto {
-    nombre: string;
-    detalle: string;
+  
+  @IsString()
+  @IsNotEmpty({ message: 'El nombre es obligatorio' })
+  nombre: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'El detalle es obligatorio' })
+  detalle: string;
 }

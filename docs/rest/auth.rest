@@ -2,8 +2,8 @@ POST http://127.0.0.1:3000/auth/register
 Content-Type: application/json
 
 {
-    "name":"prueba3",
-    "email": "raul.paez@outlook.com",
+    "name":"prueba6",
+    "email": "raul.paez6@outlook.com",
     "password": "Pass_123"
 }
 
@@ -12,11 +12,20 @@ POST http://127.0.0.1:3000/auth/login
 Content-Type: application/json
 
 {
-    "name":"pruebaRP",
-    "email": "raul.paez@outlook.com",
+    "name":"prueba6",
+    "email": "raul.paez6@outlook.com",
     "password": "Pass_123"
 }
 
 ### users
 GET http://127.0.0.1:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhdWwucGFlekBvdXRsb29rLmNvbSIsImlkIjoxLCJpYXQiOjE3MjgzOTg4MzQsImV4cCI6MTcyODQ0MjAzNH0.jTGwGoBWvrb-PBFr3vcdhHWR7ZNIG-0bcqX9BJoe6IQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhdWwucGFlejZAb3V0bG9vay5jb20iLCJpZCI6MSwiaWF0IjoxNzQxNjk5NzU3LCJleHAiOjE3NDE3NDI5NTd9.H0MbR-5zo4c360zWAorDdx80MzUqdLXM6ZHNQwDXmNs
+
+
+###Olvide la contraseña
+POST  http://localhost:3000/auth/forgot-password
+Content-Type: application/json
+
+{
+    "email": "raul.paez@outlook.com"
+}

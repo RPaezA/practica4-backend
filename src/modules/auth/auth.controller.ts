@@ -2,6 +2,8 @@ import { Body, Controller, Post, UnauthorizedException } from "@nestjs/common";
 import { RegisterAuthDto } from "./dto/register-auth.dto";
 import { LoginAuthDto } from "./dto/login-auth.dto";
 import { AuthService } from "./auth.service";
+import { ForgotPasswordDto } from "./dto/forgot-password.dto";
+import { ResetPasswordDto } from "./dto/reset-password.dto";
 
 @Controller('auth')
 export class AuthController {
@@ -20,14 +22,16 @@ export class AuthController {
     }
     return this.authService.login(user);
   }
+  // Cambio: modulo olvido contraseña
+  @Post('forgot-password')
+  async forgotPassword(@Body('email') email: string) {
+    return this.authService.forgotPassword(email);
+  }
 
-  @Post("forgot-password")
-    async forgotPassword(@Body("email") email: string) {
-        return this.authService.forgotPassword(email);
-    }
+  //Cambio: reset password
+  @Post('reset-password')
+  async resetPassword(@Body() resetDto: ResetPasswordDto) {
+  return this.authService.resetPassword(resetDto);
+}
 
-    @Post("reset-password")
-    async resetPassword(@Body("token") token: string, @Body("password") password: string) {
-        return this.authService.resetPassword(token, password);
-    }
 }

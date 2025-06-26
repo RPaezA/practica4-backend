@@ -1,0 +1,17 @@
+### Listar productos
+GET http://localhost:3000/producto
+
+### Crear producto
+POST http://localhost:3000/producto
+Content-Type: application/json
+
+{
+ "nombre": "Prueba",
+ "precio": 300.00,
+ "stock": 10,
+ "categoriaId": 1
+}
+
+### Buscar producto por nombre
+GET http://localhost:3000/producto/back?page=1&q=Im&sort=asc
+
